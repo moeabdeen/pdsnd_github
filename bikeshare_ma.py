@@ -16,7 +16,8 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+
+    # get user input for city
    
     while True:
         city = input("\nWhich city would you like to filter by? New York City, Chicago or Washington?\n")
@@ -74,18 +75,16 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
 
-    # filter by month if applicable
+    # filter by month
     if month != 'all':
-   	 	# use the index of the months list to get the corresponding int
         months = ['January', 'February', 'March', 'April', 'May', 'June','july','august','september','october','november','december']
         month = months.index(month) + 1
 
     	# filter by month to create the new dataframe
         df = df[df['month'] == month]
 
-        # filter by day of week if applicable
+        # filter by day of week
     if day != 'all':
-        # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
 
     return df
