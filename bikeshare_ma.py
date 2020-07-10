@@ -29,7 +29,7 @@ def get_filters():
 
     # get user input for month (all)
 
-    month_list=['January','February','March','April','May','June','July','August','September','October','November','December','All']
+    month_list=['January','February','March','April','May','June','All']
     while True:
         month =input("\nWhich month would you like to filter by?\nType 'all' if you don't want to filter by month.\n") 
         month=month.title()
@@ -77,7 +77,7 @@ def load_data(city, month, day):
 
     # filter by month
     if month != 'all':
-        months = ['January', 'February', 'March', 'April', 'May', 'June','july','august','september','october','november','december']
+        months = ['January', 'February', 'March', 'April', 'May', 'June','All']
         month = months.index(month) + 1
 
     	# filter by month to create the new dataframe
